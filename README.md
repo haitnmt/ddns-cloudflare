@@ -5,15 +5,26 @@ This repository contains a bash script that checks the current external IP addre
 
 Key Features:
 
-Fetches the current external IP address.
-Compares the fetched IP address with the existing DNS record.
-Updates the DNS record on Cloudflare if the IP address has changed.
-Uses Cloudflare API for secure and efficient updates.
-Can be set up to run automatically using cron jobs.
-Includes an OpenRC service script for easy setup on Alpine Linux.
+- Fetches the current external IP address.
+- Compares the fetched IP address with the existing DNS record.
+- Updates the DNS record on Cloudflare if the IP address has changed.
+- Uses Cloudflare API for secure and efficient updates.
+- Can be set up to run automatically using cron jobs.
 
 Usage Instructions:
-Setup Script: Place the update_dns.sh script in a suitable directory, such as /usr/local/bin/, and make it executable.
-'''
+1. Setup Script: Place the update_dns.sh script in a suitable directory, such as /usr/local/bin/, and make it executable.
+```sh
 sudo chmod +x /usr/local/bin/update_dns.sh
-'''
+```
+
+2. Configure Script: Edit the script to include your Cloudflare API token, zone identifier, and record name.
+
+3. Create a Cron Job: Open the crontab editor and add a job to run the script every 5 minutes.
+```sh
+export EDITOR=nano
+sudo crontab -e
+```
+Add the following line to the crontab file:
+```sh
+*/5 * * * * /usr/local/bin/update_dns.sh
+```
