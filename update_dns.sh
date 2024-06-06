@@ -36,7 +36,7 @@ if [[ -z "$record" ]] || [[ "$record" == *'"count":0'* ]]; then
   # Create a new record
   create_record=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$zone_identifier/dns_records" \
     "${header_auth_param[@]}" -H "Content-Type: application/json" \
-    --data "{\"type\":\"A\",\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":120,\"proxied\":true}")
+    --data '{"type":"A","name":"'$record_name'","content":"'$ip'","ttl":3600,"proxied":true}')
   
   # Check the result of creating a new record
   if [[ "$create_record" == *'"success":true'* ]]; then
@@ -63,7 +63,7 @@ echo "  > Different IP addresses detected, synchronizing..."
 # Update the DNS record
 update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_identifier/dns_records/$record_identifier" \
   "${header_auth_param[@]}" -H "Content-Type: application/json" \
-  --data "{\"id\":\"$zone_identifier\",\"type\":\"A\",\"proxied\":true,\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":120}")
+  --data '{"id":"'$zone_identifier'","type":"A","proxied":true,"name":"'$record_name'","content":"'$ip'","ttl":3600}')
 
 # Check the result of the update
 if [[ "$update" == *'"success":true'* ]]; then

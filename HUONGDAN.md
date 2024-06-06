@@ -61,3 +61,7 @@ Sửa đổi các giá trị sau trong script để phù hợp với cấu hình
 ```
 ## Giấy phép
 Dự án này được cấp phép theo giấy phép MIT. Xem tệp [GIAYPHEP](https://github.com/haitnmt/ddns-cloudflare/blob/main/GIAYPHEP) để biết thêm chi tiết.
+
+---
+Chúc các bạn thành công!
+

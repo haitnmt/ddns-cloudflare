@@ -36,7 +36,7 @@ if [[ -z "$record" ]] || [[ "$record" == *'"count":0'* ]]; then
   # Tạo bản ghi mới
   create_record=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$zone_identifier/dns_records" \
     "${header_auth_param[@]}" -H "Content-Type: application/json" \
-    --data "{\"type\":\"A\",\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":120,\"proxied\":true}")
+    --data '{"type":"A","name":"'$record_name'","content":"'$ip'","ttl":3600,"proxied":true}')
   
   # Kiểm tra kết quả tạo bản ghi mới
   if [[ "$create_record" == *'"success":true'* ]]; then
@@ -55,7 +55,7 @@ echo "  > Giá trị bản ghi DNS hiện tại: $old_ip"
 
 # So sánh IP hiện tại với IP mới
 if [[ "$ip" == "$old_ip" ]]; then
-  echo "Cập nhật cho A record '$record_name ($record_identifier)' bị hủy. IP không thay đổi."
+  echo "Không cần cập nhật IP  cho '$record_name'. IP không thay đổi."
   exit 0
 fi
 echo "  > IP khác nhau, đang đồng bộ..."
@@ -63,7 +63,7 @@ echo "  > IP khác nhau, đang đồng bộ..."
 # Cập nhật bản ghi DNS
 update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_identifier/dns_records/$record_identifier" \
   "${header_auth_param[@]}" -H "Content-Type: application/json" \
-  --data "{\"id\":\"$zone_identifier\",\"type\":\"A\",\"proxied\":true,\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":120}")
+  --data '{"id":"'$zone_identifier'","type":"A","proxied":true,"name":"'$record_name'","content":"'$ip'","ttl":3600}')
 
 # Kiểm tra kết quả cập nhật
 if [[ "$update" == *'"success":true'* ]]; then
