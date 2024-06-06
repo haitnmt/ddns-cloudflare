@@ -60,4 +60,4 @@ To run the script every 5 minutes, set up a cron job:
 */5 * * * * /usr/local/bin/update_dns.sh
 ```
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/haitnmt/ddns-cloudflare/blob/main/LICENSE) file for details.
