@@ -62,6 +62,10 @@ Sửa đổi các giá trị sau trong script để phù hợp với cấu hình
 ## Giấy phép
 Dự án này được cấp phép theo giấy phép MIT. Xem tệp [GIAYPHEP](https://github.com/haitnmt/ddns-cloudflare/blob/main/GIAYPHEP) để biết thêm chi tiết.
 
+## Nguồn Gốc Ban Đầu
+
+Script này dựa trên [Nguồn Gốc](https://thuanbui.me/cap-nhat-ip-dong-cho-ten-mien-qua-cloudflare-de-truy-cap-homelab-tai-nha/), với các chỉnh sửa và cải tiến cho các trường hợp sử dụng cụ thể. Tất cả công lao thuộc về tác giả gốc cho phần triển khai ban đầu.
+
 ---
 Chúc các bạn thành công!!!
 
