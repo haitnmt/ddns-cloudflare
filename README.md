@@ -61,3 +61,7 @@ To run the script every 5 minutes, set up a cron job:
 ```
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/haitnmt/ddns-cloudflare/blob/main/LICENSE) file for details.
+
+---
+
+Good luck!!!
