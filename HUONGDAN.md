@@ -30,7 +30,7 @@ Cloudflare DNS Updater là một script bash giúp kiểm tra địa chỉ IP b�
 1. Tải script về và đặt vào một thư mục phù hợp, chẳng hạn như `/usr/local/bin/`.
 2. Đảm bảo script có quyền thực thi:
 ```sh
-sudo chmod +x /usr/local/bin/update_dns.sh
+    chmod +x /usr/local/bin/update_dns.sh
 ```
 ## Sử dụng
 1. Cấu hình script: Mở script và điền các thông tin cần thiết như auth_token, zone_identifier, và record_name.
@@ -53,11 +53,11 @@ Sửa đổi các giá trị sau trong script để phù hợp với cấu hình
 1. Mở trình chỉnh sửa crontab:
 ```sh
     export EDITOR=nano
-    sudo crontab -e
+    crontab -e
 ```
 2. Thêm dòng sau vào tệp crontab:
 ```sh
-*/5 * * * * /usr/local/bin/update_dns.sh
+    */5 * * * * /usr/local/bin/update_dns.sh
 ```
 ## Giấy phép
 Dự án này được cấp phép theo giấy phép MIT. Xem tệp [GIAYPHEP](https://github.com/haitnmt/ddns-cloudflare/blob/main/GIAYPHEP) để biết thêm chi tiết.

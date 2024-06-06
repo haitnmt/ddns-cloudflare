@@ -30,7 +30,7 @@ Cloudflare DNS Updater is a bash script that checks the current external IP addr
 1. Download the script and place it in a suitable directory, such as `/usr/local/bin/`.
 2. Ensure the script is executable:
 ```sh
-   sudo chmod +x /usr/local/bin/update_dns.sh
+   chmod +x /usr/local/bin/update_dns.sh
 ```
 ## Usage
 1. Configure the script: Open the script and fill in the necessary information such as auth_token, zone_identifier, and record_name.
@@ -53,11 +53,11 @@ To run the script every 5 minutes, set up a cron job:
 1. Open the crontab editor:
 ```sh
     export EDITOR=nano
-    sudo crontab -e
+    crontab -e
 ```
 2. Add the following line to the crontab file:
 ```sh
-*/5 * * * * /usr/local/bin/update_dns.sh
+    */5 * * * * /usr/local/bin/update_dns.sh
 ```
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/haitnmt/ddns-cloudflare/blob/main/LICENSE) file for details.
