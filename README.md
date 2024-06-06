@@ -64,7 +64,7 @@ To run the script every 5 minutes, set up a cron job:
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/haitnmt/ddns-cloudflare/blob/main/LICENSE) file for details.
 
 ## Original Source
-This script is based on the [Original Source](https://thuanbui.me/cap-nhat-ip-dong-cho-ten-mien-qua-cloudflare-de-truy-cap-homelab-tai-nha/), with modifications and enhancements for specific use cases. Full credit to the original author for the initial implementation.
+This script is based on the [Original Source](https://thuanbui.me/cap-nhat-ip-dong-cho-ten-mien-qua-cloudflare-de-truy-cap-homelab-tai-nha/), with modifications and enhancements for specific use cases.
 
 ---
 
